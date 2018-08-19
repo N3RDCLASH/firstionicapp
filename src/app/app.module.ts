@@ -8,6 +8,19 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { RegisterPage } from '../pages/register/register';
 import { LoginPage } from '../pages/login/login';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
+
+const firebaseAuth = {
+  apiKey: "AIzaSyDUdPV5_oH8u1qhjySPUvDmjHLxPv11hOE",
+  authDomain: "firstionicapp-29.firebaseapp.com",
+  databaseURL: "https://firstionicapp-29.firebaseio.com",
+  projectId: "firstionicapp-29",
+  storageBucket: "firstionicapp-29.appspot.com",
+  messagingSenderId: "104740449037"
+};
+
 
 @NgModule({
   declarations: [
@@ -18,7 +31,9 @@ import { LoginPage } from '../pages/login/login';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseAuth),
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
